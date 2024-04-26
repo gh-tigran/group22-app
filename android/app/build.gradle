@@ -109,6 +109,8 @@ dependencies {
     implementation("com.facebook.react:react-android")
     implementation("com.facebook.react:flipper-integration")
 
+    implementation project(':react-native-contacts')
+
     if (hermesEnabled.toBoolean()) {
         implementation("com.facebook.react:hermes-android")
     } else {
@@ -117,3 +119,7 @@ dependencies {
 }
 
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)
+project.ext.vectoricons = [
+    iconFontNames: [ 'MaterialIcons.ttf', 'Ionicons.ttf' ]
+]
+apply from: file("../../node_modules/react-native-vector-icons/fonts.gradle")
